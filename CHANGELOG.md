@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Add linting of Markdown files
+* Add `TESTING.md`
 
 ## 4.11.1 / 2021-08-24
 
