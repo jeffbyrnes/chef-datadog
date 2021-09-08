@@ -4,6 +4,7 @@
 
 * Add linting of Markdown files
 * Add `TESTING.md`
+* Standardize Chef & git config files per current conventions
 
 ## 4.11.1 / 2021-08-24
 
