@@ -5,6 +5,7 @@
 * Add linting of Markdown files
 * Add `TESTING.md`
 * Standardize Chef & git config files per current conventions
+* Replace `#reject` with `#compact` per cookstyle/RuboCop
 * Auto-correct cookstyle offenses
 * Reorganize unit tests per current conventions
 * Drop deprecated ChefSpec coverage
