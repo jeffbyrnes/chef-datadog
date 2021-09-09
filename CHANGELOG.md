@@ -7,6 +7,7 @@
 * Standardize Chef & git config files per current conventions
 * Auto-correct cookstyle offenses
 * Reorganize unit tests per current conventions
+* Drop deprecated ChefSpec coverage
 
 ## 4.11.1 / 2021-08-24
 

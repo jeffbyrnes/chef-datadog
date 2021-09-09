@@ -36,5 +36,3 @@ RSpec.configure do |config|
 
   Ohai::Config[:log_level] = :warn
 end
-
-ChefSpec::Coverage.start!
