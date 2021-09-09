@@ -48,7 +48,7 @@ describe 'datadog::dd-agent' do
       cached(:chef_run) do
         ChefSpec::SoloRunner.new(
           platform: 'ubuntu',
-          version: '14.04'
+          version: '16.04'
         ) do |node|
           node.normal['datadog'] = { 'api_key' => 'somethingnotnil' }
           node.normal['languages'] = { 'python' => { 'version' => '2.6.2' } }
@@ -63,7 +63,7 @@ describe 'datadog::dd-agent' do
       cached(:chef_run) do
         ChefSpec::SoloRunner.new(
           platform: 'debian',
-          version: '8.11'
+          version: '9.11'
         ) do |node|
           node.normal['datadog'] = { 'api_key' => 'somethingnotnil' }
           node.normal['languages'] = { 'python' => { 'version' => '2.7.5+' } }
@@ -78,7 +78,7 @@ describe 'datadog::dd-agent' do
       cached(:chef_run) do
         ChefSpec::SoloRunner.new(
           platform: 'ubuntu',
-          version: '14.04'
+          version: '16.04'
         ) do |node|
           node.normal['datadog'] = { 'api_key' => 'somethingnotnil' }
           node.normal['languages'] = { 'python' => { 'version' => '2.4' } }
@@ -97,21 +97,6 @@ describe 'datadog::dd-agent' do
         ) do |node|
           node.normal['datadog'] = { 'api_key' => 'somethingnotnil' }
           node.normal['languages'] = { 'python' => { 'version' => '2.6.2' } }
-        end.converge described_recipe
-      end
-
-      it_behaves_like 'repo recipe'
-      it_behaves_like 'rhellions no version set'
-    end
-
-    context 'on CentOS 5.11 distro' do
-      cached(:chef_run) do
-        ChefSpec::SoloRunner.new(
-          platform: 'centos',
-          version: '5.11'
-        ) do |node|
-          node.normal['datadog'] = { 'api_key' => 'somethingnotnil' }
-          node.normal['languages'] = { 'python' => { 'version' => '2.4.3' } }
         end.converge described_recipe
       end
 
@@ -196,7 +181,7 @@ describe 'datadog::dd-agent' do
     cached(:chef_run) do
       ChefSpec::SoloRunner.new(
         platform: 'ubuntu',
-        version: '14.04'
+        version: '16.04'
       ) do |node|
         node.normal['datadog'] = {
           'agent_major_version' => 5,
@@ -219,7 +204,7 @@ describe 'datadog::dd-agent' do
       cached(:chef_run) do
         ChefSpec::SoloRunner.new(
           platform: 'ubuntu',
-          version: '14.04'
+          version: '16.04'
         ) do |node|
           node.normal['datadog'] = {
             'agent_major_version' => 5,
@@ -311,7 +296,7 @@ describe 'datadog::dd-agent' do
       cached(:chef_run) do
         ChefSpec::SoloRunner.new(
           platform: 'ubuntu',
-          version: '14.04'
+          version: '16.04'
         ) do |node|
           node.normal['datadog'] = {
             'agent_major_version' => 6,
@@ -465,7 +450,7 @@ describe 'datadog::dd-agent' do
       cached(:chef_run) do
         ChefSpec::SoloRunner.new(
           platform: 'ubuntu',
-          version: '14.04'
+          version: '16.04'
         ) do |node|
           node.normal['datadog'] = {
             'agent_major_version' => 5,
@@ -573,7 +558,7 @@ describe 'datadog::dd-agent' do
       cached(:chef_run) do
         ChefSpec::SoloRunner.new(
           platform: 'ubuntu',
-          version: '14.04'
+          version: '16.04'
         ) do |node|
           node.normal['datadog'] = {
             'agent_version' => '1:6.8.0-1',
@@ -591,7 +576,7 @@ describe 'datadog::dd-agent' do
       cached(:chef_run) do
         ChefSpec::SoloRunner.new(
           platform: 'ubuntu',
-          version: '14.04'
+          version: '16.04'
         ) do |node|
           node.normal['datadog'] = {
             'api_key' => 'somethingnotnil',
@@ -617,7 +602,7 @@ describe 'datadog::dd-agent' do
       cached(:chef_run) do
         ChefSpec::SoloRunner.new(
           platform: 'ubuntu',
-          version: '14.04'
+          version: '16.04'
         ) do |node|
           node.normal['datadog'] = {
             'agent_major_version' => 5,
@@ -640,7 +625,7 @@ describe 'datadog::dd-agent' do
       cached(:chef_run) do
         ChefSpec::SoloRunner.new(
           platform: 'ubuntu',
-          version: '14.04'
+          version: '16.04'
         ) do |node|
           node.normal['datadog'] = {
             'agent_major_version' => 5,
@@ -663,7 +648,7 @@ describe 'datadog::dd-agent' do
       cached(:chef_run) do
         ChefSpec::SoloRunner.new(
           platform: 'ubuntu',
-          version: '14.04'
+          version: '16.04'
         ) do |node|
           node.normal['datadog'] = {
             'agent_major_version' => 5,
@@ -686,7 +671,7 @@ describe 'datadog::dd-agent' do
       cached(:chef_run) do
         ChefSpec::SoloRunner.new(
           platform: 'ubuntu',
-          version: '14.04'
+          version: '16.04'
         ) do |node|
           node.normal['datadog'] = {
             'agent_major_version' => 5,
@@ -717,7 +702,7 @@ describe 'datadog::dd-agent' do
       cached(:chef_run) do
         ChefSpec::SoloRunner.new(
           platform: 'ubuntu',
-          version: '14.04'
+          version: '16.04'
         ) do |node|
           node.normal['datadog'] = {
             'agent_major_version' => 5,
@@ -747,7 +732,7 @@ describe 'datadog::dd-agent' do
       cached(:chef_run) do
         ChefSpec::SoloRunner.new(
           platform: 'ubuntu',
-          version: '14.04'
+          version: '16.04'
         ) do |node|
           node.normal['languages'] = { 'python' => { 'version' => '2.6.2' } }
         end.converge described_recipe
@@ -762,7 +747,7 @@ describe 'datadog::dd-agent' do
       cached(:chef_run) do
         ChefSpec::SoloRunner.new(
           platform: 'ubuntu',
-          version: '14.04'
+          version: '16.04'
         ) do |node|
           node.normal['datadog'] = {
             'agent_major_version' => 5,
@@ -789,7 +774,7 @@ describe 'datadog::dd-agent' do
       cached(:chef_run) do
         ChefSpec::SoloRunner.new(
           platform: 'ubuntu',
-          version: '14.04'
+          version: '16.04'
         ) do |node|
           node.normal['languages'] = { 'python' => { 'version' => '2.6.2' } }
           node.normal['datadog'] = { 'agent_major_version' => 5 }
@@ -812,7 +797,7 @@ describe 'datadog::dd-agent' do
     cached(:chef_run) do
       ChefSpec::SoloRunner.new(
         platform: 'ubuntu',
-        version: '14.04'
+        version: '16.04'
       ) do |node|
         node.normal['datadog'] = {
           'agent_major_version' => 5,
@@ -850,7 +835,7 @@ describe 'datadog::dd-agent' do
         cached(:chef_run) do
           ChefSpec::SoloRunner.new(
             platform: 'ubuntu',
-            version: '14.04'
+            version: '16.04'
           ) do |node|
             node.normal['datadog'] = { 'api_key' => 'somethingnotnil' }
             node.normal['languages'] = { 'python' => { 'version' => '2.6.2' } }
@@ -892,7 +877,7 @@ describe 'datadog::dd-agent' do
         cached(:chef_run) do
           ChefSpec::SoloRunner.new(
             platform: 'ubuntu',
-            version: '14.04'
+            version: '16.04'
           ) do |node|
             node.normal['datadog'] = {
               'api_key' => 'somethingnotnil',
@@ -982,7 +967,7 @@ describe 'datadog::dd-agent' do
         cached(:chef_run) do
           ChefSpec::SoloRunner.new(
             platform: 'amazon',
-            version: '2017.03'
+            version: '2018.03'
           ) do |node|
             node.normal['datadog'] = { 'api_key' => 'somethingnotnil', 'agent_major_version' => 6 }
           end.converge described_recipe
@@ -1037,7 +1022,7 @@ describe 'datadog::dd-agent' do
           cached(:chef_run) do
             ChefSpec::SoloRunner.new(
               platform: 'ubuntu',
-              version: '14.04'
+              version: '16.04'
             ) do |node|
               node.name 'chef-nodename' # expected to be used as the hostname in `datadog.yaml`
               node.normal['datadog'] = { 'api_key' => 'somethingnotnil', 'agent_major_version' => 6 }
@@ -1148,7 +1133,7 @@ describe 'datadog::dd-agent' do
         cached(:chef_run) do
           ChefSpec::SoloRunner.new(
             platform: 'ubuntu',
-            version: '14.04'
+            version: '16.04'
           ) do |node|
             node.name 'chef-nodename' # expected to be used as the hostname in `datadog.yaml`
             node.normal['datadog'] = {
@@ -1209,7 +1194,7 @@ describe 'datadog::dd-agent' do
         cached(:chef_run) do
           ChefSpec::SoloRunner.new(
             platform: 'ubuntu',
-            version: '14.04'
+            version: '16.04'
           ) do |node|
             node.name 'chef-nodename' # expected to be used as the hostname in `datadog.yaml`
             node.normal['datadog'] = {
@@ -1386,7 +1371,7 @@ describe 'datadog::dd-agent' do
     let(:chef_run) do
       ChefSpec::SoloRunner.new(
         platform: 'ubuntu',
-        version: '14.04'
+        version: '16.04'
       ) do |node|
         node.normal['datadog'] = {
           'api_key' => 'somethingnotnil',

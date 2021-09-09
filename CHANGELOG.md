@@ -8,6 +8,7 @@
 * Auto-correct cookstyle offenses
 * Reorganize unit tests per current conventions
 * Drop deprecated ChefSpec coverage
+* Update unit tests to run against current versions of distros
 
 ## 4.11.1 / 2021-08-24
 
