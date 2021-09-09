@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-require_relative '../libraries/recipe_helpers'
+require_relative '../../libraries/recipe_helpers'
 
 describe Chef::Datadog::WindowsInstallHelpers do
   describe '#must_reinstall?' do
@@ -18,7 +18,7 @@ describe Chef::Datadog::WindowsInstallHelpers do
     end
 
     let(:chef_version) do
-      '14.0.0'
+      '16.0.0'
     end
 
     context 'when the agent is not installed' do
