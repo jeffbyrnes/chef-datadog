@@ -7,7 +7,6 @@ provisioner:
   product_name: chef
   product_version: <%= ENV['CHEF_VERSION'] || 'latest' %>
   chef_license: accept-no-persist
-  enforce_idempotency: true
   deprecations_as_errors: true
 
 platforms:
