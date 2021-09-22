@@ -21,5 +21,6 @@ issues_url       'https://github.com/DataDog/chef-datadog/issues'
 ).each do |os|
   supports os
 end
-depends    'apt' # Use '< 6.0.0' with Chef < 12.9
-depends    'yum', '>= 3.0' # Use '< 5.0' with Chef < 12.14
+
+depends    'apt'
+depends    'yum', '< 7.0.0' # yum v7.0.0 drops Chef 14 support
