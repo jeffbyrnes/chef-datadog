@@ -9,6 +9,15 @@
 * Reorganize unit tests per current conventions
 * Drop deprecated ChefSpec coverage
 * Update unit tests to run against current versions of distros
+* Clean up/tighten up Kitchen config:
+    * Test on last two currently-supported OS versions
+    * Add provisioner config
+    * Drop unnecessary interpolation ERB in favor of injected Env Vars
+        * This avoids overloading Test Kitchen & Ruby with too many test suites
+    * Replace kitchen-docker w/ kitchen-dokken
+        * It’s been the accepted convention for testing using Docker for some time
+    * Clean up YAML anchors & aliases
+        * Should only be a single version of each anchor
 
 ## 4.11.1 / 2021-08-24
 
