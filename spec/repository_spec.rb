@@ -114,7 +114,7 @@ describe 'datadog::repository' do
     context 'centos 6, agent 7' do
       cached(:chef_run) do
         ChefSpec::SoloRunner.new(
-          platform: 'centos', version: '6.9'
+          platform: 'centos', version: '6'
         ) do |node|
           node.normal['datadog'] = { 'agent_major_version' => '7' }
         end.converge(described_recipe)
@@ -202,7 +202,7 @@ describe 'datadog::repository' do
     context 'centos 6, agent 6' do
       cached(:chef_run) do
         ChefSpec::SoloRunner.new(
-          platform: 'centos', version: '6.9'
+          platform: 'centos', version: '6'
         ) do |node|
           node.normal['datadog'] = { 'agent_major_version' => '6' }
         end.converge(described_recipe)

@@ -9,7 +9,7 @@ require 'yaml'
 if ENV['OS'] == 'Windows_NT'
   set :backend, :cmd
   # On Windows, set the target host's OS explicitly
-  set :os, :family => 'windows'
+  set :os, family: 'windows'
   @agent_package_name = 'Datadog Agent'
   @agent_service_name = 'DatadogAgent'
   @agent_config_dir = "#{ENV['ProgramData']}/Datadog"

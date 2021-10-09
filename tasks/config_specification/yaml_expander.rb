@@ -77,13 +77,13 @@ module ConfigSpecification
       # will be replaced by the template
 
       keys = obj.keys
-      keys == %w[template] || keys == %w[template overrides]
+      keys == %w(template) || keys == %w(template overrides)
     end
 
     def template_of(object, remove_reference: false)
       template_path = remove_reference ? object.delete('template') : object['template']
 
-      return nil unless template_path
+      return unless template_path
 
       template_cache.fetch_template(template_path)
     end

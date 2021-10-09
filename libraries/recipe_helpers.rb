@@ -2,17 +2,17 @@ class Chef
   # Helper class for Datadog Chef recipes
   class Datadog
     class << self
-      ACCEPTABLE_AGENT_FLAVORS = %w[
+      ACCEPTABLE_AGENT_FLAVORS = %w(
         datadog-agent
         datadog-iot-agent
-      ].freeze
+      ).freeze
 
       def agent_version(node)
         dd_agent_version = node['datadog']['agent_version']
         if dd_agent_version.respond_to?(:each_pair)
           platform_family = node['platform_family']
           # Unless explicitly listed, treat fedora and amazon as rhel
-          if !dd_agent_version.include?(platform_family) && ['fedora', 'amazon'].include?(platform_family)
+          if !dd_agent_version.include?(platform_family) && %w(fedora amazon).include?(platform_family)
             platform_family = 'rhel'
           end
           dd_agent_version = dd_agent_version[platform_family]
@@ -158,13 +158,13 @@ class Chef
 
         include Chef::Mixin::ShellOut
         def agent_status
-          return nil unless File.exist?(WIN_BIN_PATH)
+          return unless File.exist?(WIN_BIN_PATH)
           shell_out("\"#{WIN_BIN_PATH}\" status").stdout.strip
         end
 
         def fetch_current_version
           status = agent_status
-          return nil if status.nil?
+          return if status.nil?
           match_data = status.match(/^Agent \(v(.*)\)/)
 
           # Nightlies like 6.20.0-devel+git.38.cd7f989 fail to parse as Gem::Version because of the '+' sign
@@ -175,7 +175,7 @@ class Chef
 
         def requested_agent_version(node)
           version = Chef::Datadog.agent_version(node)
-          return nil unless version
+          return unless version
 
           cleaned = version.scan(/\d+\.\d+\.\d+/).first
           Gem::Version.new(cleaned) if cleaned
